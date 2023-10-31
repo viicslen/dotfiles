@@ -1,0 +1,13 @@
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+
+{{ if eq .osid "linux-debian" }}
+sudo apt install ripgrep lsd zsh autoconf curl bison build-essential gettext git \
+    libgd-dev libcurl4-openssl-dev libedit-dev libicu-dev libjpeg-dev \
+    libmysqlclient-dev libonig-dev libpng-dev libpq-dev libreadline-dev libsqlite3-dev \
+    libssl-dev libxml2-dev libzip-dev openssl pkg-config re2c zlib1g-dev
+{{ else if eq .osid "linux-fedora" }}
+# Fedora-specific code
+{{ end }}
