@@ -1,0 +1,11 @@
+[".asdf"]
+    type = "git-repo"
+    url = "https://github.com/asdf-vm/asdf"
+    refreshPeriod = "168h"
+    [".asdf".pull]
+        args = ["--branch v0.13.1"]
+
+[".antigen"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/antigen"
+    refreshPeriod = "168h"
