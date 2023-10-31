@@ -1,0 +1,22 @@
+source ~/.zsh/antigen.zsh
+source ~/.zsh/aliases.zsh
+source ~/.zsh/keybinds.zsh
+source ~/.zsh/scripts.zsh
+source ~/.zsh/composer.zsh
+source ~/.zsh/pnpm.zsh
+source ~/.zsh/mlh.zsh
+
+if [ -e "$HOME/.zsh/custom.zsh" ]; then
+  source ~/.zsh/custom.zsh
+fi
+
+typeset -U path
+path=(
+  $HOME/.local/bin
+  $HOME/.cfg/scripts
+  $path
+)
+
+export EDITOR=nvim
+export GIT_EDITOR=nvim
+export TERM=screen-256color
