@@ -1,5 +1,5 @@
 {{ if eq .chezmoi.os "linux" }}
-{{   if eq .chezmoi.osRelease.id "debian" }}
+{{   if eq .chezmoi.osRelease.id "debian" "ubuntu" }}
 sudo apt install ripgrep lsd zsh autoconf curl bison build-essential gettext git \
     libgd-dev libcurl4-openssl-dev libedit-dev libicu-dev libjpeg-dev \
     libmysqlclient-dev libonig-dev libpng-dev libpq-dev libreadline-dev libsqlite3-dev \
