@@ -13,8 +13,10 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle pip
-antigen bundle composer
 antigen bundle command-not-found
+
+{{ if eq .hosttype "personal" }}
+antigen bundle composer
 antigen bundle lein
 antigen bundle asdf
 antigen bundle thefuck
@@ -22,6 +24,8 @@ antigen bundle brew
 antigen bundle 1password
 antigen bundle ariaieboy/laravel-sail --branch=main
 antigen bundle ntnyq/omz-plugin-pnpm --branch=main
+{{ end }}
+
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle marlonrichert/zsh-autocomplete --branch=main
 
