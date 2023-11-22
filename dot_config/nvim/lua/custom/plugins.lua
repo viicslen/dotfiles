@@ -42,6 +42,8 @@ local plugins = {
     end,
   },
 
+  { "fatih/vim-go" },
+
   {
     "NvChad/nvcommunity",
 
