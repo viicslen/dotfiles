@@ -4,6 +4,3 @@
 [submodule "dot_antidote"]
 	path = dot_antidote
 	url = https://github.com/mattmc3/antidote.git
-[submodule "dot_tmux/plugins/tpm"]
-	path = dot_tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
