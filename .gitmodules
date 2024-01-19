@@ -1,6 +1,6 @@
-[submodule ".antigen"]
-	path = dot_antigen
-	url = https://github.com/zsh-users/antigen.git
 [submodule ".asdf"]
 	path = dot_asdf
 	url = https://github.com/asdf-vm/asdf.git
+[submodule "dot_antidote"]
+	path = dot_antidote
+	url = https://github.com/mattmc3/antidote.git

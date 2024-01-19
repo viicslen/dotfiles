@@ -1,10 +1,16 @@
-source ~/.zsh/antigen.zsh
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+#source ~/.zsh/antigen.zsh
+source ~/.zsh/antidote.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/keybinds.zsh
 source ~/.zsh/scripts.zsh
 source ~/.zsh/composer.zsh
 source ~/.zsh/pnpm.zsh
 source ~/.zsh/mlh.zsh
+source ~/.zsh/history.zsh
 
 if [ -e "$HOME/.zsh/custom.zsh" ]; then
   source ~/.zsh/custom.zsh
@@ -13,12 +19,13 @@ fi
 typeset -U path
 path=(
   $HOME/.local/bin
-  $HOME/.cfg/scripts
   $path
 )
 
-export EDITOR=nvim
-export GIT_EDITOR=nvim
-export TERM=screen-256color
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+export EDITOR=vim
+export GIT_EDITOR=vim
+# export TERM=xterm-256color
+
+source <(switcher init zsh)
+
+[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
