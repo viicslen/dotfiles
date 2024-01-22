@@ -26,6 +26,4 @@ export EDITOR=vim
 export GIT_EDITOR=vim
 # export TERM=xterm-256color
 
-source <(switcher init zsh)
-
 [[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
