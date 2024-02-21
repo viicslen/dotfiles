@@ -3,24 +3,31 @@
 	name = {{ .name | quote }}
 {{- if eq .hosttype "personal" }}
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJk8lwwP7GnxZMgpx+C30i/Lw912BBoFccz4gjek8lCX
+
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+
 [gpg]
-        format = ssh
+    format = ssh
+
 [gpg "ssh"]
 {{- if eq .wsl "true" }}
     program = "/mnt/c/Users/Work/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
 {{- else }}
 	program = /opt/1Password/op-ssh-sign
 {{- end }}
+
 [commit]
     gpgsign = true
+
 [core]
     pager = delta --line-numbers --dark
+
 {{- end }}
 [alias]
 	nah = "!f(){ git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; }; f"
