@@ -1,7 +1,7 @@
 composer-link() {
     composer config minimum-stability dev
     local package=`echo $1 | sed -nr 's/.*\/([^\/]+)$/\1/p'`
-    composer config "repositories.$package" '{"type": "path", "url": "'$1'"}'
+    composer config "repositories.$package" '{"type": "path", "url": "'$1'", "options": {"symlink": true}}'
 }
 
 composer-github() {
