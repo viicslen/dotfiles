@@ -5,10 +5,10 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias pn='pnpm'
 alias vim='nvim'
-{{ if eq .chezmoi.os "linux" }}
-{{   if eq .chezmoi.osRelease.id "debian" "ubuntu" }}
+{{- if eq .chezmoi.os "linux" }}
+{{-   if eq .chezmoi.osRelease.id "debian" "ubuntu" }}
 alias cat='batcat'
-{{   else if eq .chezmoi.osRelease.id "fedora" }}
+{{-   else if eq .chezmoi.osRelease.id "fedora" }}
 alias cat='bat'
-{{   end }}
-{{ end }}
+{{-   end }}
+{{- end }}

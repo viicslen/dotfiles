@@ -3,6 +3,7 @@
 
 {{- $choices := list "personal" "server" -}}
 {{- $hosttype := promptChoiceOnce . "hosttype" "What type of host are you on" $choices -}}
+{{- $wsl := promptBoolOnce . "wsl" "Are you using WSL" -}}
 
 [diff]
     pager = "delta --line-numbers --dark"
@@ -10,4 +11,5 @@
 [data]
     name = {{ $name | quote }}
     email = {{ $email | quote }}
-    hosttype = {{- $hosttype | quote -}}
+    hosttype = {{ $hosttype | quote }}
+    wsl = {{ $wsl | quote }}
