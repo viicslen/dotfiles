@@ -1,0 +1,24 @@
+{
+  lib,
+  pkgs,
+  config,
+  options,
+  ...
+}:
+with lib; let
+  cfg = config.features.stylix;
+  homeManagerLoaded = builtins.hasAttr "home-manager" options;
+in {
+  options.features.stylix = {
+    enable = mkEnableOption (mdDoc "stylix");
+  };
+
+  config = mkIf cfg.enable (mkMerge [
+    {
+
+    }
+    (mkIf homeManagerLoaded {
+      
+    })
+  ]);
+}

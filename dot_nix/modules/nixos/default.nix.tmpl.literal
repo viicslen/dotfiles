@@ -1,0 +1,17 @@
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
+with lib; let
+  cfg = config.features.stylix;
+in {
+  options.features.stylix = {
+    enable = mkEnableOption (mdDoc "stylix");
+  };
+
+  config = mkIf cfg.enable {
+    
+  };
+}

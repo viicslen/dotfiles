@@ -2,5 +2,6 @@ install.sh
 .zsh/plugins.zsh
 .zsh/custom.zsh
 .nix/.vscode
+.nix/.vscode/*
 .vscode
 .idea
